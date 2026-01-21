@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mechanical Clock Mechanism Explorer</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene"></canvas>
+      <div class="hud">
+        <header class="hud__header">
+          <div>
+            <h1>Mechanical Clock Mechanism</h1>
+            <p>发条驱动机械钟内部机构演示</p>
+          </div>
+          <div class="hud__controls">
+            <button id="play-btn" aria-label="Play or pause">Play</button>
+            <button id="prev-btn" aria-label="Previous segment">Prev</button>
+            <button id="next-btn" aria-label="Next segment">Next</button>
+            <button id="reset-btn" aria-label="Reset playback">Reset</button>
+            <label>
+              Speed
+              <select id="speed-select" aria-label="Playback speed">
+                <option value="0.25">0.25x</option>
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="2">2x</option>
+              </select>
+            </label>
+          </div>
+        </header>
+        <section class="hud__panel">
+          <div class="hud__segment">
+            <div class="hud__segment-text">
+              <h2 id="segment-title"></h2>
+              <p id="segment-body"></p>
+            </div>
+            <div class="hud__formula">
+              <button id="formula-toggle" aria-label="Toggle formula">公式 Formula</button>
+              <div id="formula-container" class="formula-container" aria-live="polite"></div>
+              <p id="formula-caption" class="formula-caption"></p>
+            </div>
+          </div>
+          <div class="hud__list">
+            <h3>部件列表 / Components</h3>
+            <div id="component-list" class="component-list"></div>
+          </div>
+        </section>
+        <footer class="hud__footer">
+          <div class="progress">
+            <div id="progress-track" class="progress__track">
+              <div id="progress-fill" class="progress__fill"></div>
+            </div>
+            <span id="progress-label"></span>
+          </div>
+          <div class="toggles">
+            <button id="xray-btn" aria-label="Toggle x-ray mode">X-Ray</button>
+            <button id="explode-btn" aria-label="Toggle exploded view">Explode</button>
+            <button id="labels-btn" aria-label="Toggle labels">Labels</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
